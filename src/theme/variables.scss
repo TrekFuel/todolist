@@ -1,3 +1,10 @@
+@import "src/themes";
+
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+};
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
