@@ -1,0 +1,46 @@
+<form [formGroup]="form">
+    <ng-container formArrayName="todo"
+                  *ngFor="let field of formArr.controls; let i = index"
+                  class="todo-item">
+        <nb-form-field class="form-field">
+            <input [formControlName]="i"
+                   type="text"
+                   nbInput
+                   status="info"
+                   fieldSize="large"
+                   shape="semi-round"/>
+            <button (click)="clearControl(i)"
+                    type="button"
+                    nbSuffix
+                    nbButton
+                    ghost>
+                <nb-icon icon="close-outline"></nb-icon>
+            </button>
+        </nb-form-field>
+        <ul class="btns-list">
+            <li>
+                <button type="submit"
+                        nbButton
+                        status="success">
+                    <nb-icon icon="checkmark-circle-2-outline"></nb-icon>
+                </button>
+            </li>
+            <li>
+                <button (click)="addControl()"
+                        type="button"
+                        nbButton
+                        status="info">
+                    <nb-icon icon="plus-outline"></nb-icon>
+                </button>
+            </li>
+            <li>
+                <button (click)="removeControl(i)"
+                        type="button"
+                        nbButton
+                        status="danger">
+                    <nb-icon icon="archive-outline"></nb-icon>
+                </button>
+            </li>
+        </ul>
+    </ng-container>
+</form>

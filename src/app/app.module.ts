@@ -11,11 +11,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { HomePageModule } from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, BrowserAnimationsModule, NbThemeModule.forRoot({ name: 'corporate' }), NbLayoutModule, NbEvaIconsModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({ name: 'corporate' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    HomePageModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
@@ -23,4 +33,6 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+
+export class AppModule {
+}
