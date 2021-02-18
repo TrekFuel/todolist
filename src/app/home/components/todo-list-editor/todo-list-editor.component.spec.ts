@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { TodoListComponent } from './todo-list.component';
+import { TodoListEditorComponent } from './todo-list.component';
 
 describe('TodoItemComponent', () => {
-  let component: TodoListComponent;
-  let fixture: ComponentFixture<TodoListComponent>;
+  let component: TodoListEditorComponent;
+  let fixture: ComponentFixture<TodoListEditorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListComponent ],
+      declarations: [ TodoListEditorComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TodoListComponent);
+    fixture = TestBed.createComponent(TodoListEditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

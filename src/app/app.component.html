@@ -1,19 +1,26 @@
 <ion-app>
-    <nb-layout>
 
-        <nb-layout-header fixed>
-            <!-- Insert header here -->
-        </nb-layout-header>
+    <ion-header>
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <ion-back-button></ion-back-button>
+            </ion-buttons>
+            <ion-title class="ion-text-center">
+                ToDo List
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-        <nb-layout-column>
+    <ion-content>
+        <ion-router-outlet></ion-router-outlet>
+    </ion-content>
 
-            <ion-router-outlet></ion-router-outlet>
+    <ion-footer>
+        <ion-toolbar>
+            <ion-title class="ion-text-center">
+                Ionic test app
+            </ion-title>
+        </ion-toolbar>
+    </ion-footer>
 
-        </nb-layout-column>
-
-        <nb-layout-footer fixed>
-            <!-- Insert footer here -->
-        </nb-layout-footer>
-
-    </nb-layout>
 </ion-app>
