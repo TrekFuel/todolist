@@ -1,15 +1,16 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { TodoListService } from '../../../shared/services/todo-list.service';
-import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: 'home.page.html',
-    styleUrls: ['home.page.scss'],
+    selector: 'app-todo-view',
+    templateUrl: './todo-view.page.html',
+    styleUrls: ['./todo-view.page.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomePage implements OnInit, OnDestroy {
+export class TodoViewPage implements OnInit, OnDestroy {
+    public toDoListData$ = this.todoListService.toDoListData$;
     private _subscription: Subscription;
 
     constructor(private todoListService: TodoListService,
@@ -18,10 +19,11 @@ export class HomePage implements OnInit, OnDestroy {
 
     public ngOnInit(): void {
         this._subscription = this.activatedRoute.url
-            .subscribe(() => this.todoListService.isRootPage = true);
+            .subscribe(() => this.todoListService.isRootPage = false);
     }
 
     public ngOnDestroy(): void {
         this._subscription.unsubscribe();
     }
+
 }

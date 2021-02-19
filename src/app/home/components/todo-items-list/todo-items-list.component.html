@@ -1,0 +1,19 @@
+<ion-list lines="none"
+          class="items-list">
+    <ion-item *ngFor="let toDoListItem of toDoListData; let i = index">
+        <ion-card class="items-list ion-padding">
+            <ion-card-header>
+                ToDo item {{i + 1}}
+            </ion-card-header>
+            <ion-card-content>
+                ToDo: {{toDoListItem}}
+            </ion-card-content>
+            <ion-card-subtitle>
+                <ion-button (click)="deleteToDoItem(i)"
+                            color="danger">
+                    <ion-icon name="trash-outline"></ion-icon>
+                </ion-button>
+            </ion-card-subtitle>
+        </ion-card>
+    </ion-item>
+</ion-list>

@@ -2,12 +2,25 @@
 
     <ion-header>
         <ion-toolbar>
-            <ion-buttons slot="start">
-                <ion-back-button></ion-back-button>
+            <ion-buttons *ngIf="!(isRootPage$ | async)"
+                         slot="start">
+                <ion-back-button defaultHref="/"></ion-back-button>
             </ion-buttons>
-            <ion-title class="ion-text-center">
-                ToDo List
-            </ion-title>
+
+            <ion-list lines="none"
+                      class="nav-menu">
+                <ion-item>
+                    <a routerLink="/home"
+                       routerLinkActive="active-route"
+                       [routerLinkActiveOptions]="{exact: true}">ToDo List editor</a>
+                </ion-item>
+                <ion-item>
+                    <a routerLink="/todo-items-view"
+                       routerLinkActive="active-route"
+                       [routerLinkActiveOptions]="{exact: true}">ToDo List</a>
+                </ion-item>
+            </ion-list>
+
         </ion-toolbar>
     </ion-header>
 

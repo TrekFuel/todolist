@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './pages/home/home.page';
 import { TodoListEditorComponent } from './components/todo-list-editor/todo-list-editor.component';
+import { TodoViewPage } from './pages/todo-view/todo-view.page';
+import { TodoItemsListComponent } from './components/todo-items-list/todo-items-list.component';
 
 @NgModule({
     imports: [
@@ -16,11 +18,15 @@ import { TodoListEditorComponent } from './components/todo-list-editor/todo-list
     ],
     declarations: [
         HomePage,
-        TodoListEditorComponent
+        TodoViewPage,
+        TodoListEditorComponent,
+        TodoItemsListComponent
     ],
     exports: [
         HomePage,
-        TodoListEditorComponent
+        TodoViewPage,
+        TodoListEditorComponent,
+        TodoItemsListComponent
     ]
 })
 export class HomePageModule {
