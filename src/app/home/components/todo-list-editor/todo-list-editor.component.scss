@@ -1,0 +1,16 @@
+.btns-list {
+    display: inline-flex;
+    list-style: none;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.btns-list li {
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.clear-btn {
+    cursor: pointer;
+}

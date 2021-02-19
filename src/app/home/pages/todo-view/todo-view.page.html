@@ -1,0 +1,18 @@
+<ion-content>
+    <ion-grid>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size-xl="4"
+                     size-md="6"
+                     size-sm="12">
+
+                <ion-header class="ion-text-center">
+                    <ion-toolbar>
+                        <ion-title>ToDo items view</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+
+                <app-todo-items-list [toDoListData]="toDoListData$ | async"></app-todo-items-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

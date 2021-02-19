@@ -1,19 +1,39 @@
-<nb-layout>
+<ion-app>
 
-  <nb-layout-header fixed>
-  <!-- Insert header here -->
-  </nb-layout-header>
+    <ion-header>
+        <ion-toolbar>
+            <ion-buttons *ngIf="!(isRootPage$ | async)"
+                         slot="start">
+                <ion-back-button defaultHref="/"></ion-back-button>
+            </ion-buttons>
 
-  <nb-layout-column>
+            <ion-list lines="none"
+                      class="nav-menu">
+                <ion-item>
+                    <a routerLink="/home"
+                       routerLinkActive="active-route"
+                       [routerLinkActiveOptions]="{exact: true}">ToDo List editor</a>
+                </ion-item>
+                <ion-item>
+                    <a routerLink="/todo-items-view"
+                       routerLinkActive="active-route"
+                       [routerLinkActiveOptions]="{exact: true}">ToDo List</a>
+                </ion-item>
+            </ion-list>
 
-    <ion-app>
-      <ion-router-outlet></ion-router-outlet>
-    </ion-app>
-    
-  </nb-layout-column>
+        </ion-toolbar>
+    </ion-header>
 
-  <nb-layout-footer fixed>
-  <!-- Insert footer here -->
-  </nb-layout-footer>
+    <ion-content>
+        <ion-router-outlet></ion-router-outlet>
+    </ion-content>
 
-</nb-layout>
+    <ion-footer>
+        <ion-toolbar>
+            <ion-title class="ion-text-center">
+                Ionic test app
+            </ion-title>
+        </ion-toolbar>
+    </ion-footer>
+
+</ion-app>

@@ -1,0 +1,49 @@
+<form [formGroup]="form">
+
+    <ion-button (click)="addControl()"
+                type="button"
+                color="primary"
+                size="small">
+        <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+
+    <ng-container formArrayName="todo"
+                  *ngFor="let field of formArr.controls; let i = index"
+                  class="todo-item">
+        <ion-list>
+            <ion-item>
+                <ion-label position="floating">
+                    ToDo Item {{i + 1}}
+                </ion-label>
+
+                <ion-input [formControlName]="i"
+                           type="text"
+                           autocomplete="off">
+                </ion-input>
+                <ion-icon (click)="clearControl(i)"
+                          name="close-outline"
+                          slot="end"
+                          class="clear-btn"></ion-icon>
+
+                <ul class="btns-list">
+                    <li>
+                        <ion-button (click)="saveControlValue(i)"
+                                    type="button"
+                                    color="success">
+                            <ion-icon name="checkmark-outline"></ion-icon>
+                        </ion-button>
+                    </li>
+
+                    <li>
+                        <ion-button (click)="removeControl(i)"
+                                    type="button"
+                                    color="danger">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </ion-button>
+                    </li>
+                </ul>
+            </ion-item>
+        </ion-list>
+
+    </ng-container>
+</form>
